@@ -1,3 +1,11 @@
+var x=document.createElement("input");
+x.class="form-control mr-2";
+x.id='x';
+x.type="text";
+console.log(x);
+const a=document.getElementById("addForm");
+a.insertBefore(x,a.lastElementChild);
+
 var form = document.getElementById('addForm');
 var itemList = document.getElementById('items');
 var filter = document.getElementById('filter');
@@ -22,6 +30,7 @@ function addItem(e){
   li.className = 'list-group-item';
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
+  li.appendChild(document.createTextNode(" "+x.value));
 
   // Create del button element
   var deleteBtn = document.createElement('button');
